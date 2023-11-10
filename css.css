@@ -1,0 +1,81 @@
+/* .profile {
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 45%;
+} */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+div {
+  box-sizing: border-box;
+}
+
+.name {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: salmon;
+  text-align: center;
+}
+.main-title {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 28%;
+  margin: auto;
+  width: 500px;
+}
+.introduction {
+  width: 450px;
+  height: 100px;
+  padding: 20px;
+  border: 1px solid salmon;
+  border-radius: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: inset 0 0 5px brown, 0 0 5px salmon;
+}
+
+/* .container {
+  width: 100%;
+  height: 100%;
+} */
+.right-box {
+  width: 80%;
+  height: 900px;
+  float: right;
+  background-image: url("img/IMG_9083.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.left-box {
+  width: 20%;
+
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+.first-name {
+  float: left;
+}
+.last-name {
+  float: right;
+}
+.message {
+  float: none;
+}
+button {
+  padding: 10px;
+  text-decoration: none;
+  background-color: black;
+  color: beige;
+}
+button:hover {
+  background-color: coral;
+  border: none;
+}
