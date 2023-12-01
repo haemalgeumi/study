@@ -61,7 +61,7 @@ a:active {
 } */
 .right-box {
   width: 80%;
-  height: 900px;
+  height: 100vh;
   float: right;
   background-image: url("img/IMG_9083.JPG");
   background-repeat: no-repeat;
@@ -70,7 +70,6 @@ a:active {
 }
 .left-box {
   width: 20%;
-
   float: left;
   display: flex;
   flex-direction: column;
@@ -93,4 +92,24 @@ button {
 button:hover {
   background-color: coral;
   border: none;
+}
+@media screen and (max-width: 480px) {
+  /** 모바일 세로 */
+}
+
+@media screen and (max-width: 768px) {
+  /** 모바일 가로, 타블렛 세로 */
+  a {
+    color: blueviolet;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  a {
+    color: blueviolet;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  /** 타블렛 가로, 노트북 */
 }
