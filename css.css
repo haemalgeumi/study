@@ -68,6 +68,30 @@ a:active {
   background-size: cover;
   position: relative;
 }
+.fa-circle-chevron-right {
+  position: relative;
+  left: 1050px;
+  bottom: 90px;
+  z-index: 10;
+  font-size: 80px;
+  color: antiquewhite;
+}
+
+.fa-circle-chevron-right:hover {
+  opacity: 0.5;
+  transition: all 1s;
+}
+.fa-heart {
+  position: relative;
+  left: 30px;
+  bottom: 10px;
+  font-size: 40px;
+  color: rgb(228, 98, 98);
+}
+.fa-heart:hover {
+  opacity: 0.5;
+  transition: all 1s;
+}
 .left-box {
   width: 20%;
   float: left;
@@ -93,23 +117,149 @@ button:hover {
   background-color: coral;
   border: none;
 }
+/* form {
+  display: none;
+  z-index: 10;
+  width: 500px;
+  height: 500px;
+  background-color: wheat;
+} */
+.hidden-modal {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
+}
+.show-modal {
+  visibility: visible;
+  opacity: 1;
+}
+.hidden-information {
+  visibility: hidden;
+}
+.show-information {
+  visibility: visible;
+}
 @media screen and (max-width: 480px) {
   /** 모바일 세로 */
+  a:link,
+  a:visited {
+    text-decoration: none;
+    padding: 50px;
+    margin: 40px;
+    background-color: white;
+    color: gray;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+  }
+  a:hover,
+  a:active {
+    color: salmon;
+  }
+  i {
+    position: relative;
+    left: 800px;
+    bottom: 90px;
+    z-index: 10;
+    font-size: 60px;
+    color: antiquewhite;
+  }
+  .left-box {
+    width: 30%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-box {
+    width: 70%;
+    height: 100vh;
+    float: right;
+    background-image: url("img/IMG_9083.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
 }
 
 @media screen and (max-width: 768px) {
   /** 모바일 가로, 타블렛 세로 */
-  a {
-    color: blueviolet;
+
+  i {
+    position: relative;
+    left: 800px;
+    bottom: 90px;
+    z-index: 10;
+    font-size: 60px;
+    color: antiquewhite;
+  }
+  .left-box {
+    width: 40%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-box {
+    width: 60%;
+    height: 100vh;
+    float: right;
+    background-image: url("img/IMG_9083.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  a {
-    color: blueviolet;
+  i {
+    position: relative;
+    left: 800px;
+    bottom: 90px;
+    z-index: 10;
+    font-size: 60px;
+    color: antiquewhite;
+  }
+  .left-box {
+    width: 40%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-box {
+    width: 60%;
+    height: 100vh;
+    float: right;
+    background-image: url("img/IMG_9083.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
   }
 }
 
 @media screen and (max-width: 1280px) {
   /** 타블렛 가로, 노트북 */
+
+  i {
+    position: relative;
+    left: 800px;
+    bottom: 90px;
+    z-index: 10;
+    font-size: 60px;
+    color: antiquewhite;
+  }
+  .left-box {
+    width: 40%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-box {
+    width: 60%;
+    height: 100vh;
+    float: right;
+    background-image: url("img/IMG_9083.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
 }

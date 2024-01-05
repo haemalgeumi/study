@@ -7,15 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>haemalgeumi</title>
     <link href="css.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/7ff0b62e5f.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="main-container">
       <div class="right-box">
         <div class="main-title">
-          <h1 class="name" id="hello">haemalgeumi</h1>
-          <p style="text-align: center">
-            <span style="color: brown">Front-end</span> Developer
-          </p>
+          <div class="hidden-information">
+            <h1 class="name" id="hello">haemalgeumi</h1>
+            <p style="text-align: center">
+              <span style="color: brown">Front-end Developer</span>
+            </p>
+          </div>
+
+          <div class="hidden-modal">
+            <form action="success.html" id="contact-form">
+              <div class="container" id="container">
+                <div class="contact-box">
+                  <div class="title"><h1>Contact Me</h1></div>
+                  <div class="email-box">
+                    <h3>Email</h3>
+                    <input
+                      type="text"
+                      placeholder="email@example.com"
+                      id="email-input"
+                    />
+                  </div>
+                  <div class="name-input">
+                    <div class="first-name">
+                      <h3>First name</h3>
+                      <input type="text" id="first-name" />
+                    </div>
+                    <div class="last-name">
+                      <h3>Last name</h3>
+                      <input type="text" id="last-name" />
+                    </div>
+                  </div>
+
+                  <div class="message">
+                    <h3>Message</h3>
+                    <textarea rows="10px" id="textarea-box"></textarea>
+                  </div>
+                  <button type="submit" id="send-button">SEND</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <i class="fa-solid fa-circle-chevron-right"></i>
         </div>
       </div>
 
@@ -28,36 +70,65 @@
           target="_blank"
           >Notion</a
         >
+        <button id="contact-button">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+        <button id="dark-mode">
+          <span class="badge bg-dark" id="dark-modebtn">Dark 🔄</span>
+        </button>
       </div>
-      <!-- <form>
-        <div class="container">
-          <div class="contact-box">
-            <div class="title"><h1>Contact Me</h1></div>
-            <div class="email-input">
-              <h3>Email</h3>
-              <input type="text" placeholder="email@example.com" />
-            </div>
-            <div class="name-input">
-              <div class="first-name">
-                <h3>First name</h3>
-                <input type="text" />
-              </div>
-              <div class="last-name">
-                <h3>Last name</h3>
-                <input type="text" />
-              </div>
-            </div>
-
-            <div class="message">
-              <h3>Message</h3>
-              <textarea rows="10px"></textarea>
-            </div>
-            <button type="submit">SEND</button>
-          </div>
-        </div>
-      </form> -->
     </div>
 
-    <script></script>
+    <script>
+      // 5초마다 정보가 떳다 꺼졌다 하게 해줘
+      setInterval(function () {
+        document
+          .getElementsByClassName("hidden-information")[0]
+          .classList.add("show-information");
+      }, 1000);
+      setTimeout;
+      // 버튼 누른 횟수가 홀수면 버튼 내부 글자를 Light로 변경해주세요~
+      // 버튼 누른 횟수가 짝수면 버튼 내부 글자를 Dark로 변경해주세요~
+      var count = 0;
+      document
+        .getElementById("dark-mode")
+        .addEventListener("click", function () {
+          count++;
+          if (count % 2 === 0) {
+            document.getElementById("dark-modebtn").innerHTML = "Dark";
+          } else {
+            document.getElementById("dark-modebtn").innerHTML = "Light";
+          }
+        });
+
+      //버튼을 클릭하면  show-modal 클래스를 붙여줘
+      document
+        .getElementById("contact-button")
+        .addEventListener("click", function () {
+          document
+            .getElementsByClassName("hidden-modal")[0]
+            .classList.add("show-modal");
+        });
+      // 만약에 인풋칸에 글자가 없으면 alert창 뜨게 해줘
+      document
+        .getElementById("send-button")
+        .addEventListener("click", function (event) {
+          if (document.getElementById("email-input").value == "") {
+            alert("이메일을 입력하세요");
+            event.preventDefault();
+          }
+          if (
+            document.getElementById("first-name").value == "" ||
+            document.getElementById("last-name").value == ""
+          ) {
+            alert("이름을 입력하세요");
+            event.preventDefault();
+          }
+          if (document.getElementById("textarea-box").value === "") {
+            alert("내용을 입력하세요");
+            event.preventDefault();
+          }
+        });
+    </script>
   </body>
 </html>
