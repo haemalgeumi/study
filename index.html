@@ -109,12 +109,17 @@
             .getElementsByClassName("hidden-modal")[0]
             .classList.add("show-modal");
         });
-      // 만약에 인풋칸에 글자가 없으면 alert창 뜨게 해줘
+
+      // 만약에 인풋칸에 글자가 없으면 alert창 뜨게 해줘, 이메일형식도 체크해줘
       document
         .getElementById("send-button")
         .addEventListener("click", function (event) {
-          if (document.getElementById("email-input").value == "") {
+          let emailValue = document.getElementById("email-input").value;
+          if (emailValue == "") {
             alert("이메일을 입력하세요");
+          }
+          if (!/\S+@\S+\.\S+/.test(emailValue)) {
+            alert("이메일 형식이 잘못됐습니다.");
             event.preventDefault();
           }
           if (
