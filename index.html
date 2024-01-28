@@ -11,6 +11,8 @@
       src="https://kit.fontawesome.com/7ff0b62e5f.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <div class="main-container">
@@ -22,43 +24,49 @@
               <span style="color: brown">Front-end Developer</span>
             </p>
           </div>
-
-          <div class="hidden-modal">
-            <form action="success.html" id="contact-form">
-              <div class="container" id="container">
-                <div class="contact-box">
-                  <div class="title"><h1>Contact Me</h1></div>
-                  <div class="email-box">
-                    <h3>Email</h3>
-                    <input
-                      type="text"
-                      placeholder="email@example.com"
-                      id="email-input"
-                    />
-                  </div>
-                  <div class="name-input">
-                    <div class="first-name">
-                      <h3>First name</h3>
-                      <input type="text" id="first-name" />
-                    </div>
-                    <div class="last-name">
-                      <h3>Last name</h3>
-                      <input type="text" id="last-name" />
-                    </div>
-                  </div>
-
-                  <div class="message">
-                    <h3>Message</h3>
-                    <textarea rows="10px" id="textarea-box"></textarea>
-                  </div>
-                  <button type="submit" id="send-button">SEND</button>
-                </div>
-              </div>
-            </form>
-          </div>
-
-          <i class="fa-solid fa-circle-chevron-right"></i>
         </div>
+        <!-- 연락 모달창 -->
+        <div class="hidden-modal">
+          <form action="success.html" id="contact-form">
+            <div class="container" id="container">
+              <div class="contact-box">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <h1>Contact Me</h1>
+
+                <div class="email-box">
+                  <h3>Email</h3>
+                  <input
+                    type="text"
+                    placeholder="email@example.com"
+                    id="email-input"
+                  />
+                </div>
+                <div class="name-input">
+                  <div class="first-name">
+                    <h3>First name</h3>
+                    <input type="text" id="first-name" />
+                  </div>
+                  <div class="last-name">
+                    <h3>Last name</h3>
+                    <input type="text" id="last-name" />
+                  </div>
+                </div>
+
+                <div class="message">
+                  <h3>Message</h3>
+                  <textarea
+                    rows="10px"
+                    cols="50px"
+                    id="textarea-box"
+                  ></textarea>
+                </div>
+                <button type="submit" id="send-button">SEND</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- 오른쪽 버튼 -->
+        <i class="fa-solid fa-circle-chevron-right"></i>
       </div>
 
       <div class="left-box">
@@ -70,16 +78,20 @@
           target="_blank"
           >Notion</a
         >
-        <button id="contact-button">
+        <!-- 해결할 부분 -->
+        <div class="etc-button">
           <i class="fa-solid fa-heart"></i>
-        </button>
-        <button id="dark-mode">
-          <span class="badge bg-dark" id="dark-modebtn">Dark 🔄</span>
-        </button>
+          <div class="dark-modebtn">
+            <span class="badge bg-dark" id="dark-modebtn">Dark 🔄</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <script>
+      $.get("https://codingapple1.github.io/price.json").done(function (data) {
+        console.log(data);
+      });
       // 5초마다 정보가 떳다 꺼졌다 하게 해줘
       setInterval(function () {
         document

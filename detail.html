@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="detail.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <ul class="list">
+        <li class="tab-button">Products</li>
+        <li class="tab-button orange">Information</li>
+        <li class="tab-button">Shipping</li>
+      </ul>
+      <div class="tab-content">
+        <p>상품설명입니다. Product</p>
+      </div>
+      <div class="tab-content show">
+        <p>스펙설명입니다. Information</p>
+      </div>
+      <div class="tab-content">
+        <p>배송정보입니다. Shipping</p>
+      </div>
+    </div>
+
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option class="select-cap">모자</option>
+        <option class="select-shirt">셔츠</option>
+        <option class="select-shirt">바지</option>
+      </select>
+
+      <select class="size-hidden">
+        <option>100</option>
+        <option>95</option>
+        <option>90</option>
+      </select>
+    </form>
+    <script>
+      let a = "<option>size</option>";
+      $(".form-select").on("input", function () {
+        if ($(".select-shirt").val() === "셔츠") {
+          $(".size-hidden").addClass("size");
+        } else if ($(".select-cap").val() === "모자") {
+          $(".size-hidden").removeClass("size");
+        }
+      });
+      // $(".form-select").on("input", function () {
+      //   if ($(".select-cap").val() === "모자") {
+      //     $(".size").removeClass("size-hidden");
+      //   }
+      // });
+
+      //0 번 누르면
+      //0.1.2에 있던 orange 클래스명 전부 제거
+      //박스0,1,2에 붙어있던 show 클래스명 전부 제거하라고 코드 3줄 짜기
+      // 박스0에 show 클래스명 부착
+
+      $(".tab-button")
+        .eq(0)
+        .on("click", function () {
+          $(".tab-button").removeClass("orange");
+          $(".tab-button").eq(0).addClass("orange");
+          $(".tab-content").removeClass("show");
+          $(".tab-content").eq(0).addClass("show");
+        });
+
+      $(".tab-button")
+        .eq(1)
+        .on("click", function () {
+          $(".tab-button").removeClass("orange");
+          $(".tab-button").eq(1).addClass("orange");
+          $(".tab-content").removeClass("show");
+          $(".tab-content").eq(1).addClass("show");
+        });
+
+      $(".tab-button")
+        .eq(2)
+        .on("click", function () {
+          $(".tab-button").removeClass("orange");
+          $(".tab-button").eq(2).addClass("orange");
+          $(".tab-content").removeClass("show");
+          $(".tab-content").eq(2).addClass("show");
+        });
+    </script>
+  </body>
+</html>

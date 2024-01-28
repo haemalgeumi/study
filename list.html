@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="card"></div>
+
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option>모자</option>
+        <option class="select-shirt">셔츠</option>
+      </select>
+
+      <select class="size">
+        <option>100</option>
+        <option>95</option>
+        <option>90</option>
+      </select>
+    </form>
+
+    <script>
+      var products = [
+        { id: 0, price: 70000, title: "Blossom Dress" },
+        { id: 1, price: 50000, title: "Springfield Shirt" },
+        { id: 2, price: 60000, title: "Black Monastery" },
+      ];
+      // document.querySelector(".title").innerHTML = products[2].title;
+      products.forEach((a, i) => {
+        var 템플릿 = `<div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>${products[i].title}</h5>
+        <p>가격 : ${products[i].price}</p>
+      </div>`;
+        $(".card").append(템플릿);
+      });
+    </script>
+  </body>
+</html>
