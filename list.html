@@ -22,8 +22,26 @@
         <option>90</option>
       </select>
     </form>
+    <button class="filterBtn">6만원 아하</button>
 
     <script>
+      $(".filterBtn").click(function () {
+        let moneyFilter = products.filter(function (a) {
+          return a.price <= 60000;
+        });
+        console.log(moneyFilter);
+        $(".card").html(" ");
+
+        moneyFilter.forEach((a, i) => {
+          var 템플릿 = `<div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>${moneyFilter[i].title}</h5>
+        <p>가격 : ${moneyFilter[i].price}</p>
+      </div>`;
+          $(".card").append(템플릿);
+        });
+      });
+
       var products = [
         { id: 0, price: 70000, title: "Blossom Dress" },
         { id: 1, price: 50000, title: "Springfield Shirt" },
