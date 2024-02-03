@@ -53,8 +53,17 @@
         <img src="https://via.placeholder.com/600" class="w-100">
         <h5>${products[i].title}</h5>
         <p>가격 : ${products[i].price}</p>
-      </div>`;
+      </div>
+      <button class ="buyBtn">구매</button>`;
         $(".card").append(템플릿);
+      });
+
+      $(".buyBtn").click(function () {
+        let a = $(".buyBtn").prevAll("h5");
+        console.log(a);
+
+        let cartArr = [].push(a);
+        localStorage.setItem("cart", "cartArr");
       });
     </script>
   </body>
